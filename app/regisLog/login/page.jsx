@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerLogo, registerLitle} from "../../assets/index";
 import Image from "next/image";
-import { Grafic } from "@/app/assets/icon/grafic";
+import { Grafic } from "@/public/assets/grafic";
 import Link from "next/link";
 import { Email } from "@/app/assets/icon/email";
 import { Password } from "@/app/assets/icon/password";
