@@ -6,7 +6,7 @@ import {zodResolver} from "@hookform/resolvers/zod"
 import { Logo } from '@/app/assets/icon/logo'
 import { registerLitle, registerLogo } from '@/app/assets'
 import Image from 'next/image'
-import { Grafic } from '@/app/assets/icon/grafic'
+import { Grafic } from '@/public/assets/grafic'
 import { Password } from '@/app/assets/icon/password'
 import { Email } from '@/app/assets/icon/email'
 import { Fullname } from '@/app/assets/icon/fullname'
