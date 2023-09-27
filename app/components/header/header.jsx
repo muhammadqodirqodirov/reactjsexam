@@ -8,38 +8,38 @@ import axios from 'axios'
 import "./main-header.css"
 import { MenuHeader } from './menuHeader'
 export const Header = () => {
-  // const route = window.location;
+  const route = window.location;
   const [isPath, setIsPath] = useState("/");
   const [isLogout, setIsLogout] = useState(false);
   const [login,setLogin]=useState(false)
-  // useEffect(() => {
-  //   console.log(isLogout);
-  //   axios.post(
-  //       "http://207.154.221.44:4002/api/dishes",
-  //       {},
-  //       { headers: { Authorization: localStorage.getItem("token") } }
-  //     )
-  //     .then((res) => {
-  //       if (res.data.statusCode === 500) {
-  //         console.log("logout");
-  //         setIsLogout(true);
-  //       } else {
-  //         setIsLogout(false);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  //   if (route.pathname.endsWith("/")) {
-  //     setIsPath("/");
-  //   } else if (route.pathname.endsWith("/page/datas")) {
-  //     setIsPath("/page/datas");
-  //   } else if (route.pathname.endsWith("/components/pageCart")) {
-  //     setIsPath("/components/pageCart");
-  //   }
-  // }, 
-  // [route.pathname, localStorage.getItem("token")]
-  // );
+  useEffect(() => {
+    console.log(isLogout);
+    axios.post(
+        "http://207.154.221.44:4002/api/dishes",
+        {},
+        { headers: { Authorization: localStorage.getItem("token") } }
+      )
+      .then((res) => {
+        if (res.data.statusCode === 500) {
+          console.log("logout");
+          setIsLogout(true);
+        } else {
+          setIsLogout(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    if (route.pathname.endsWith("/")) {
+      setIsPath("/");
+    } else if (route.pathname.endsWith("/page/datas")) {
+      setIsPath("/page/datas");
+    } else if (route.pathname.endsWith("/components/pageCart")) {
+      setIsPath("/components/pageCart");
+    }
+  }, 
+  [route.pathname, localStorage.getItem("token")]
+  );
 const cart = useCartPage((state)=>state.post)
 const [menu,setMenu]=useState(false)
 const handlclick=()=>{
